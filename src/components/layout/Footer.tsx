@@ -24,6 +24,7 @@ export function Footer() {
             <li><Link href="/compliance" className="hover:text-corporate-blue transition-colors">RVSF Authorization</Link></li>
             <li><Link href="/compliance" className="hover:text-corporate-blue transition-colors">CVS & COD Issuance</Link></li>
             <li><Link href="/compliance" className="hover:text-corporate-blue transition-colors">Scrappage Policy</Link></li>
+            <li><Link href="/faq" className="hover:text-corporate-blue transition-colors">FAQ</Link></li>
           </ul>
         </div>
         <div>

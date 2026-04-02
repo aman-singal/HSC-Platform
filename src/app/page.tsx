@@ -115,6 +115,77 @@ export default function Home() {
 
       <CalculatorWidget />
 
+      <section className="py-32 bg-pure-white border-t border-divider">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <div className="text-center mb-20">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="inline-block px-4 py-1.5 rounded-full border border-corporate-blue/20 bg-blue-50 text-corporate-blue text-sm font-black tracking-widest uppercase mb-6 shadow-sm"
+            >
+              Common Questions
+            </motion.div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-heading">
+              Everything you need <br className="hidden md:block" /> to know.
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {[
+              { 
+                q: "What documents are required for scrapping?", 
+                a: "You primarily need the original Registration Certificate (RC), a photocopy of the owner's ID (Aadhar/PAN), and a signed authorization form. We assist with all paperwork." 
+              },
+              { 
+                q: "Is Hindustan Scrap Corporation government authorized?", 
+                a: "Absolutely. We are a fully licensed Registered Vehicle Scrapping Facility (RVSF) operating under the official Indian Vehicle Scrappage Policy." 
+              },
+              { 
+                q: "How do I get the 'Certificate of Deposit' (CD)?", 
+                a: "Once your vehicle is scrapped at our RVSF, we issue a digital Certificate of Deposit. You can use this to get up to 25% road tax concession and registration fee waivers on your new vehicle." 
+              },
+              { 
+                q: "Can I scrap a vehicle with an active loan?", 
+                a: "To scrap a vehicle under hypothecation, you must first obtain a No Objection Certificate (NOC) from the bank/financier confirming the loan is cleared." 
+              },
+              { 
+                q: "When will I receive the final payment?", 
+                a: "We offer instant bank transfers. Once our experts inspect the vehicle at your doorstep and confirm the details, the amount is credited to your account immediately." 
+              },
+              { 
+                q: "What happens to the hazardous materials?", 
+                a: "We follow deep-green industrial standards. All oils, fuels, batteries, and gases are safely extracted and neutralized in our depollution unit before the metal is crushed." 
+              }
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.6, delay: i * 0.1 }}
+                className="h-full"
+              >
+                <SpotlightCard className="h-full p-10">
+                  <h3 className="text-xl md:text-2xl font-bold text-heading mb-4 tracking-tight group-hover:text-corporate-blue transition-colors">
+                    {item.q}
+                  </h3>
+                  <p className="text-body font-medium leading-relaxed">
+                    {item.a}
+                  </p>
+                </SpotlightCard>
+              </motion.div>
+            ))}
+          </div>
+          
+          <div className="mt-16 text-center">
+            <Link href="/faq" className="text-corporate-blue font-bold text-lg hover:underline underline-offset-4 decoration-2">
+              View all frequently asked questions →
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <section className="py-32 bg-heading text-white text-center relative overflow-hidden border-t-8 border-corporate-blue/20">
         <motion.div 
           initial={{ opacity: 0, y: 50 }}
