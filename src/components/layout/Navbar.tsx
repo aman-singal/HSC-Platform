@@ -13,6 +13,7 @@ const navLinks = [
   { name: "Compliance", href: "/compliance" },
   { name: "Pricing", href: "/pricing" },
   { name: "FAQ", href: "/faq" },
+  { name: "Blog", href: "/blog" },
   { name: "Contact", href: "/contact" },
 ];
 
