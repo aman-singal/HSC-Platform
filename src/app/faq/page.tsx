@@ -84,7 +84,7 @@ export default function FAQPage() {
           <a href="mailto:hindustanscrapcorporation@gmail.com" className="px-8 py-4 bg-corporate-blue text-white rounded-full font-bold shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all">
             Email Support
           </a>
-          <a href="tel:+919089889090" className="px-8 py-4 border border-divider text-heading rounded-full font-bold hover:bg-layer-light transition-all">
+          <a href="tel:+919315573237" className="px-8 py-4 border border-divider text-heading rounded-full font-bold hover:bg-layer-light transition-all">
             Call Our Team
           </a>
         </div>
