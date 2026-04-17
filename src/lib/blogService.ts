@@ -27,9 +27,16 @@ export interface BlogPost {
   createdAt: Date;
   updatedAt: Date;
   imageUrl?: string;
+  extraImages?: { 
+    url: string; 
+    alignment: 'left' | 'center' | 'right' | 'full'; 
+    caption?: string;
+    width?: string;
+  }[];
   tags?: string[];
   author?: string;
   metaDescription?: string;
+  showBackLink?: boolean;
 }
 
 const TIMEOUT_MS = 15000;

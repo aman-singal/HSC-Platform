@@ -1,27 +1,14 @@
-'use client';
-
-import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { getPosts, BlogPost } from '@/lib/blogService';
 import { Calendar, Tag, ChevronRight } from 'lucide-react';
 
-export default function BlogListingPage() {
-  const [posts, setPosts] = useState<BlogPost[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchPosts = async () => {
-      try {
-        const data = await getPosts(false); // fetch non-admin posts
-        setPosts(data);
-      } catch (error) {
-        console.error("Error fetching blogs:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchPosts();
-  }, []);
+export default async function BlogListingPage() {
+  let posts: BlogPost[] = [];
+  try {
+    posts = await getPosts(false); // fetch non-admin posts
+  } catch (error) {
+    console.error("Error fetching blogs:", error);
+  }
 
   return (
     <main className="min-h-screen bg-slate-50 dark:bg-slate-950 pt-24 pb-20">
@@ -35,11 +22,7 @@ export default function BlogListingPage() {
           </p>
         </div>
 
-        {loading ? (
-          <div className="flex justify-center items-center py-20">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
-          </div>
-        ) : posts.length === 0 ? (
+        {posts.length === 0 ? (
           <div className="text-center py-20 bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800">
             <h3 className="text-xl font-medium text-slate-800 dark:text-slate-200 mb-2">No posts yet</h3>
             <p className="text-slate-500 dark:text-slate-400">Check back soon for new articles.</p>
