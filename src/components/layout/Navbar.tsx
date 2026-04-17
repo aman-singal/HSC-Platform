@@ -133,7 +133,7 @@ export function Navbar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 z-40 bg-white/95 backdrop-blur-xl pt-24 px-6 flex flex-col md:hidden"
+            className="fixed inset-0 z-40 bg-white/95 backdrop-blur-xl pt-24 pb-12 px-6 flex flex-col md:hidden overflow-y-auto"
           >
             <nav className="flex flex-col space-y-6 text-xl font-medium text-heading">
               {navLinks.map((link) => {
