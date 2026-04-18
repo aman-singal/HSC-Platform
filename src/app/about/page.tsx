@@ -59,7 +59,7 @@ export default function AboutPage() {
                transition={{ duration: 0.6, delay: i * 0.1, type: "spring" }}
                className="bg-layer-light p-6 md:p-10 rounded-3xl md:rounded-[2.5rem] border border-divider text-center shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all cursor-default"
             >
-              <h3 className="text-3xl sm:text-4xl md:text-5xl font-black text-corporate-blue mb-2 tracking-tight">{stat.value}</h3>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-corporate-blue mb-2 tracking-tight">{stat.value}</h2>
               <p className="text-heading font-black tracking-widest uppercase text-xs">{stat.label}</p>
             </motion.div>
           ))}

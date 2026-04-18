@@ -64,11 +64,11 @@ export function CalculatorWidget() {
               <div className="w-full md:w-auto text-left md:text-right bg-layer-light rounded-2xl p-6 min-w-[280px]">
                 <p className="text-sm text-subheading mb-1 font-medium">Estimated Range</p>
                 {estimatedValue !== null ? (
-                  <div className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-corporate-blue to-sub-accent tracking-tight">
+                  <div className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-corporate-blue to-blue-700 tracking-tight">
                     ₹{estimatedValue.toLocaleString()} - ₹{(estimatedValue * 1.2).toLocaleString()}
                   </div>
                 ) : (
-                  <div className="text-4xl font-bold text-divider tracking-tight">
+                  <div className="text-4xl font-bold text-heading/40 tracking-tight">
                     ₹ ---
                   </div>
                 )}

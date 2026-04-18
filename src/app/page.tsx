@@ -29,7 +29,7 @@ export default function Home() {
               key={i} 
               className="pt-8 md:pt-0 md:px-6 first:pt-0 first:px-0 text-center md:text-left flex flex-col justify-center"
             >
-              <h3 className="text-xl font-bold text-heading tracking-tight mb-2">{item.label}</h3>
+              <h2 className="text-xl font-bold text-heading tracking-tight mb-2">{item.label}</h2>
               <p className="text-sm font-medium text-body">{item.sub}</p>
             </motion.div>
           ))}
