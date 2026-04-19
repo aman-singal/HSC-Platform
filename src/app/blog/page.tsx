@@ -2,6 +2,8 @@ import Link from 'next/link';
 import { getPosts, BlogPost } from '@/lib/blogService';
 import { Calendar, Tag, ChevronRight } from 'lucide-react';
 
+export const dynamic = 'force-dynamic';
+
 export default async function BlogListingPage() {
   let posts: BlogPost[] = [];
   try {

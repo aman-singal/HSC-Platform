@@ -70,7 +70,7 @@ export const getPosts = async (admin: boolean = false): Promise<BlogPost[]> => {
   } else {
     q = query(
       postsRef, 
-      where('status', '==', 'published'),
+      where('status', 'in', ['published', 'scheduled']),
     );
   }
   

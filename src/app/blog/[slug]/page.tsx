@@ -4,6 +4,8 @@ import Link from 'next/link';
 import { Calendar, User, ArrowLeft, Tag } from 'lucide-react';
 import BlogStyles from '@/components/blog/BlogStyles';
 
+export const dynamic = 'force-dynamic';
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const post = await getPostBySlug(slug);
