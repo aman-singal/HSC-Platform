@@ -9,13 +9,25 @@ try {
 
 if (!admin.apps.length) {
   try {
-    admin.initializeApp({
-      projectId: 'hindustanscrap-9a424',
-      // To run locally with full admin privileges, ensure you set the 
-      // GOOGLE_APPLICATION_CREDENTIALS environment variable 
-      // pointing to your service account JSON file, or pass the credential object here.
-      credential: admin.credential.applicationDefault()
-    });
+    const projectId = process.env.FIREBASE_PROJECT_ID || 'hindustanscrap-9a424';
+    const clientEmail = process.env.FIREBASE_CLIENT_EMAIL;
+    const privateKey = process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, '\n');
+
+    if (clientEmail && privateKey) {
+      admin.initializeApp({
+        projectId,
+        credential: admin.credential.cert({
+          projectId,
+          clientEmail,
+          privateKey,
+        }),
+      });
+    } else {
+      admin.initializeApp({
+        projectId,
+        credential: admin.credential.applicationDefault()
+      });
+    }
   } catch (error) {
     console.error('Firebase admin initialization error', error);
   }
