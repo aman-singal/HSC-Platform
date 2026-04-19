@@ -22,12 +22,18 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     }
   };
 
+  const isLoginPage = pathname === '/admin/login';
+
+  if (isLoginPage) {
+    return <main className="min-h-screen relative">{children}</main>;
+  }
+
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-950 flex flex-col md:flex-row">
       {/* Sidebar */}
       <aside className="w-full md:w-64 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 flex-shrink-0 relative">
-        <div className="p-6">
-          <Link href="/" className="flex items-center gap-2">
+        <div className="p-6 text-center md:text-left">
+          <Link href="/" className="flex items-center justify-center md:justify-start gap-2">
             <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">
               HSC Admin
             </span>
@@ -54,7 +60,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           })}
         </nav>
 
-        <div className="absolute bottom-0 w-full p-4 border-t border-slate-200 dark:border-slate-800">
+        <div className="md:absolute bottom-0 w-full p-4 border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
           <button 
             onClick={handleLogout}
             className="flex items-center gap-3 px-4 py-3 w-full rounded-lg text-sm font-medium text-slate-600 hover:bg-red-50 hover:text-red-600 dark:text-slate-400 dark:hover:bg-red-900/30 dark:hover:text-red-400 transition-colors"
