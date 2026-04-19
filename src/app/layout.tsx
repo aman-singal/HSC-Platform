@@ -14,8 +14,8 @@ export const metadata: Metadata = {
   title: "Hindustan Scrap Corporation | Authorized RVSF",
   description: "Government-approved Registered Vehicle Scrapping Facility. Ensuring transparency, compliance, and environmental care at every step.",
   icons: {
-    icon: '/logo.png',
-    apple: '/logo.png',
+    icon: '/favicon.png',
+    apple: '/favicon.png',
   },
 };
 
